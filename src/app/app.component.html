@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<!--{{selectedItem}}-->
+<div class="row">
+  <div class="col-md-3">
+    <div class="input-group">
+      <button class="form-control" (click)="toggleDropDown()">{{selectedItem.stateName}}</button>
+      <span class="btn input-group-addon" (click)="toggleDropDown()">
+    <i class="caret"></i>
+  </span>
+    </div>
+    <span [hidden]="showDropDown"> 
+  <input class="" #input placeholder="Search..." id="search" (keydown)="createItem(input.value)"/>
+    <br/>
+    <span *ngIf="addFresh"> 
+      <span [hidden]="addItem" class="btn btn-default" (click)="addAndSelect(input.value)">
+        {{input.value}} &nbsp;&nbsp;Add &amp; Select</span>
+    </span>
+    <div class="item" *ngFor="let item of data | search: input.value" (click)="clicked(item)">
+      {{item.stateName}}
+    </div>
+    </span>
+  </div>
+</div>
