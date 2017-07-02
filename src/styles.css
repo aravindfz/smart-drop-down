@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+.item{
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+.smart-drop-down{
+    align-content: center;
+    min-width: 260px;
+    padding-bottom: 10px
+}
+
+ .search-box{
+     max-width: 50%;
+     margin-right: 10px;
+ }
+ .item-holder{
+    max-height: 100%;
+    
+    width: 300px;
+ }
+ 

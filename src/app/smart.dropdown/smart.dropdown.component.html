@@ -7,23 +7,18 @@
         <span class="btn input-group-addon" (click)="toggleDropDown()">
           <i class="caret"></i>
         </span>
-
       </div>
-      <div class="item-holder">
-        <span [hidden]="showDropDown" style="padding-top: 10px"> 
-        <div class="input-group">
-        <input class="form-control search-box" #input [(ngModel)]="nameOfTheNewState" placeholder="Search..." id="search"
-         (keydown)="createItem(nameOfTheNewState)"/>
+      <span [hidden]="showDropDown" style="text-align: center;padding-top: 10px"> 
+        <input class="form-control" #input placeholder="Search..." id="search" (keydown)="createItem(input.value)"/>
+          <br/>
           <span *ngIf="addFresh"> 
             <span [hidden]="addItem" class="btn btn-default" (click)="addAndSelect(input.value)">
               {{input.value}} &nbsp;&nbsp;Add &amp; Select</span>
-        </span>
-      </div>
+      </span>
       <div class="item" *ngFor="let item of data | search: input.value" (click)="clicked(item)">
         {{item.stateName}}
       </div>
       </span>
     </div>
   </div>
-</div>
 </div>

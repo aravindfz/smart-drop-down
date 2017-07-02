@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   @ViewChild('input') input: ElementRef;
   @Input() addFresh: boolean = true;
   @Input() items: Array<any>;
-  selectedItem: string = "Select a Location";
+  selectedItem: any = { selectedItem: "Select a Location" };
   showDropDown: boolean = true;
   searchText: string;
   addItem: boolean = false;
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
     }
   }
   addAndSelect(item: string) {
-    this.selectedItem = item;
+    this.selectedItem.stateName = item;
     let newState = {
       id: -1,
       stateName: item
